@@ -41,7 +41,6 @@ header {
 body {
     margin: 0px; padding: 0px;
     grid-template-rows: auto 1fr;
-    background-color: white;
 }
 .home-mainblock {
     display: grid;
@@ -62,10 +61,10 @@ body {
 .home-text_main {
     margin: 0px 0px 0px 20px;
 }
-.home-couse_text_main {
+.home-course_text_main {
     font-family: Display; font-size: 32px; font-weight: 600;
     color: #1D1D1F; margin: 0px; padding: 0px;
-    width: 185px;
+    width: auto; height: 38px
 }
 .home-date_text_main {
     font-family: Regular; font-size: 16px;

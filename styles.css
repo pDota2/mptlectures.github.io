@@ -78,6 +78,7 @@ body {
     width: 212px; height: 42px;
 }
 .home-button_main {
+    cursor: pointer;
     width: 200px; height: 40px; margin: 25px 0px 25px 55px; padding: 0px;
     background-color: #007FFF; border-radius: 20px; border: none;
     font-family: Regular; font-size: 16px; color: white; font-weight: 600;

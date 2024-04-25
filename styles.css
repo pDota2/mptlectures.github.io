@@ -12,6 +12,16 @@
     --light-gray: #D9D9D9;
     --back: #1D1D1F;
 }
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* основная страница */
 header {
     margin: 0; padding: 0;
@@ -24,12 +34,12 @@ header {
     justify-items: center;
 }
 .home-header_button {
-    display: flex; width: 304px; height: 19px;
+    display: flex; height: 19px; justify-content: center;
     margin: 15px 0px 0px 0px; text-align: center; padding: 0px; gap: 10px;
 }
 .home-header_button a {
     text-decoration: none; font-family: Regular; font-size: 16px; color: #000000;
-    transition: 0.3s ease-in;
+    transition: 0.2s ease;
 }
 .home-text_block {
     display: grid;  width: 245px; height: 53px;
@@ -46,7 +56,7 @@ header {
 .self-links {
     color: var(--back);
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 .self-links:hover {
     color: var(--blue);
@@ -59,7 +69,9 @@ body {
     background-color: white;
 }
 .home-mainblock {
-    display: grid;
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+    display: grid; 
     margin: 25px 0px 0px 0px; padding: 0px; justify-content: center;
 }
 .home-card_course {
@@ -107,4 +119,44 @@ body {
 .footer_bottom_text {
     font-family: Regular; font-size: 10px; font-weight: 500;
     text-align: center; margin: 100px 0px 0px 0px; color: #6E6E73;
+}
+/* инфо страница */
+.info-block {
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    padding: 0px; margin: 0px; justify-items: center;
+}
+.info-admin_project {
+    margin: 25px 0px 0px 0px; padding: 0px;
+    display: grid;
+    grid-template-rows: repeat(1, auto);
+    justify-items: center;
+}
+.info-card_display {
+    padding: 0px; margin: 0px;
+    font-family: Display; font-weight: 600; font-size: 32px;
+    color: var(--back);
+}
+.info-card {
+    display: grid; grid-template-columns: 39px auto;
+    margin: 15px 0px 0px 0px; padding:  0px; align-items: center;
+}
+.info-card_text {
+    margin: 0px 0px 0px 5px;
+    width: 227px;
+}
+.info-card_text_name {
+    padding: 0px; margin: 0px;
+    font-family: Regular; font-size: 16px; color: var(--back);
+    white-space: nowrap;
+}
+.info-card_text_tg {
+    padding: 0px; margin: 5px 0px 0px 0px;
+    font-family: Regular; font-size: 12px; color: #6E6E73;
+}
+.linktg {
+    color: #007FFF;
+    text-decoration: none;
 }

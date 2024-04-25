@@ -10,6 +10,7 @@
     --blue: #007FFF;
     --gray: #6E6E73;
     --light-gray: #D9D9D9;
+    --back: #1D1D1F;
 }
 /* основная страница */
 header {
@@ -43,7 +44,7 @@ header {
     font-family: Regular; font-size: 12px; font-weight: 100; color: #6E6E73;
 }
 .self-links {
-    color: black;
+    color: var(--back);
     text-decoration: none;
     transition: 0.2s;
 }

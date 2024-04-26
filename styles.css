@@ -179,3 +179,20 @@ body {
     animation: slideUp 0.5s forwards; opacity: 0;
     animation-delay: 0.2s;
 }
+.autor-block button {
+    width: 200px; height: 40px;
+    margin: 100px 0px 0px 0px; padding: 0px;
+    border: 2px solid #007FFF; background-color: transparent;
+    border-radius: 20px;
+    font-family: Regular; font-size: 16px; font-weight: 700;
+    transition: 0.2s ease; color: #007FFF;
+}
+.autor-block button:hover {
+    background-color: #007FFF;
+    color: white;
+}
+.autor-button_send {
+    text-align: center;
+    animation: slideUp 0.5s forwards; opacity: 0;
+    animation-delay: 0.4s;
+}

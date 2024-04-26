@@ -196,3 +196,72 @@ body {
     animation: slideUp 0.5s forwards; opacity: 0;
     animation-delay: 0.4s;
 }
+/* выбор предмета странциа */
+.choose-mainblock {
+    display: grid; grid-template-rows: 2 auto;
+    margin: 25px 0px 0px 0px; padding: 0px;
+    justify-items: center; 
+    row-gap: 25px;
+}
+.choose-grid {
+    display: grid; grid-template-rows: 1 auto;
+    margin: 0px; padding: 0px;
+    justify-items: center;
+    row-gap: 15px;
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+    animation-delay: 0.2s;
+}
+.choose-text_block {
+    margin: 0px; padding: 0px;
+    width: 310px;
+    opacity: 0;
+    animation: slideUp 0.5s forwards;
+}
+.choose-top_text {
+    margin: 0px; padding: 0px;
+    font-family: Display; font-size: 32px;
+    font-weight: 600; color: var(--back);
+}
+.choose-bottom_text {
+    margin: 0px; padding: 0px;
+    font-family: Regular; font-size: 16px;
+    color: var(--gray);
+}
+.choose-block {
+    cursor: pointer;
+    display: grid; margin: 0px; padding: 0px;
+    grid-template-rows: 1 auto;
+}
+.background_block {
+    display: flex; align-items: center;
+    width: 310px; height: 50px;
+    background-color: #D9D9D9;
+    border: none; border-radius: 5px;
+    margin: 0px; padding: 0px;
+    overflow: hidden;
+}
+.background_block p {
+    margin: 0px; padding: 0px;
+    display: inline-block;
+    font-family: Display; font-size: 128px;
+    color: white; font-weight: 600;
+}
+.background_block button {
+    margin: 0px; padding: 0px;
+    background-color: #007FFF; color: white;
+    font-family: Display; font-size: 16px; font-weight: 700;
+    border: none; border-radius: 5px; width: 30px; height: 30px;
+    text-align: center; justify-content: center;
+}
+.block_text_top {
+    margin: 5px 0px 0px 0px; padding: 0px;
+    font-family: Regular; font-size: 16px;
+    font-weight: 600;
+    color: var(--back);
+}
+.block_text_bottom {
+    margin: 0px; padding: 0px;
+    font-family: Regular; font-size: 12px;
+    color: var(--gray);
+}

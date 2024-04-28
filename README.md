@@ -1,8 +1,10 @@
-# React + Vite
+#MPT lectures bot react layout 
+- his is bot for MPT students. He is store many notes inside himself.
+* If you want to be a creator notes, please contact with [me](https://t.me/BIG_zh0pa)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+" Enjoy this
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Contact info 
+<p>Main developers:</p>
+* [Maksim Lavrov](https://t.me/idLavr0v13)
+* [Dmitrii Kirilov](https://t.me/BIG_zh0pa)

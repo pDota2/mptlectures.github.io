@@ -3,26 +3,33 @@ const { OpenAI } = require('openai')
 require('dotenv').config()
 const { generateUpdateMiddleware } = require("telegraf-middleware-console-time") 
 const { Bot, InlineKeyboard, session } = require('grammy')
-const { conversations, createConversation } = require('@grammyjs/conversations')
+const { conversations, createConversation } = require("@grammyjs/conversations");
 
-const bot = new Bot(process.env.True_TOKEN)
+const bot = new Bot(process.env.MPTLECTUTES)
 
 const openai = new OpenAI({
-    apiKey: process.env.GPT_TOKEN,
+    apiKey: process.env.OPENAI,
 })
+
+async function GenerateTargetOrTotal(conversation, ctx) {
+    await ctx.reply("Type your technical task:");
+    const { message } = await conversation.wait();
+    await ctx.reply(`Creating new total, ${message.text}!`);
+    const answer = await openai.chat.completions.create({
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'system', content: message }],
+    });
+    await ctx.reply(answer.choices[0]);
+}
 
 bot.use(session({
     initial() {
       return {};
     },
-}))
-
-async function greeting(conversation, ctx) {
-    await ctx.reply('TEEEEEEEEEEEEST')
-}
-
-bot.use(conversations())
-bot.use(createConversation(greeting()))
+}));
+  
+bot.use(conversations());
+bot.use(createConversation(GenerateTargetOrTotal));
 bot.use(generateUpdateMiddleware())
 
 bot.api.setMyCommands([
@@ -37,6 +44,10 @@ bot.api.setMyCommands([
     }
 ])
 
+bot.command("create_target_and_total", async (ctx) => {
+    await ctx.conversation.enter("GenerateTargetOrTotal");
+});
+
 bot.command('start', async (ctx) => {
     await ctx.reply("Привет!❤️\nЭто бот в котором будут собраны лекции 2 курса📚, а так он способен создавать очереди, на сдачу каких либо работ!)", { reply_markup: helloKb })
 })
@@ -47,12 +58,6 @@ bot.command("queue_start", async (ctx) => {
     await ctx.reply('Давайте создадим очередь: ', {
         reply_markup: queueKeyboard,
     })
-})
-    
-bot.command("create_target_and_total", async (ctx) => {
-    await ctx.reply('test')
-    const test  = ctx.conversation.enter('greeting')
-    await ctx.reply(test)
 })
 
 bot.callbackQuery('q#join', async (ctx) => {
